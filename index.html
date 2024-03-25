@@ -496,6 +496,139 @@ data class Student(var id: Int = -1, var name: String = "", var rollNumber: Stri
                 By mastering the intricacies of the AndroidManifest.xml file, you gain greater control over your app's behavior and enhance your ability to develop robust and reliable Android applications.
             </p>
         </details>
+        <details>
+            <summary><strong>Understanding Inheritance in Kotlin</strong></summary>
+            <p>
+                <strong>What is Inheritance?</strong><br>
+                Inheritance is a fundamental concept in object-oriented programming that allows a class (subclass or derived class) to inherit properties and behaviors from another class (superclass or base class). In Kotlin, inheritance enables code reuse and facilitates the creation of hierarchies of related classes.
+        
+                <br><br>
+        
+                <strong>How Does Inheritance Work in Kotlin?</strong><br>
+                In Kotlin, classes are declared using the `class` keyword. To create a subclass that inherits from a superclass, use the `:` symbol followed by the name of the superclass. Here's an example:
+        
+                ```kotlin
+                open class Animal {
+                    fun speak() {
+                        println("Animal speaks")
+                    }
+                }
+        
+                class Dog : Animal() {
+                    fun bark() {
+                        println("Dog barks")
+                    }
+                }
+                ```
+        
+                In this example, the `Animal` class is the superclass, and the `Dog` class is the subclass that inherits from `Animal`. The `open` keyword is used to denote that the `Animal` class can be subclassed.
+        
+                <br><br>
+        
+                <strong>Key Concepts:</strong><br>
+                - **Superclass (Base Class):** A class from which other classes (subclasses) inherit properties and behaviors.
+                - **Subclass (Derived Class):** A class that inherits properties and behaviors from a superclass.
+                - **Inheritance Hierarchy:** A hierarchical structure formed by classes and their relationships through inheritance.
+                - **Override:** Subclasses can override methods and properties of the superclass to provide their own implementation.
+        
+                <br><br>
+        
+                <strong>Benefits of Inheritance in Kotlin:</strong><br>
+                - **Code Reusability:** Inheritance promotes code reuse by allowing subclasses to inherit common functionalities from the superclass.
+                - **Polymorphism:** Subclasses can be treated as instances of their superclass, enabling polymorphic behavior.
+                - **Modularity and Extensibility:** Inheritance facilitates the creation of modular and extensible code by organizing related classes into hierarchies.
+        
+                <br><br>
+        
+                <strong>Considerations:</strong><br>
+                - Use inheritance judiciously to avoid deep inheritance hierarchies, which can lead to code complexity and maintenance challenges.
+                - Favor composition over inheritance when appropriate, especially for code reuse in scenarios where a class can be composed of other classes rather than inheriting their behavior directly.
+        
+                <br><br>
+        
+                In summary, inheritance is a powerful mechanism in Kotlin that allows classes to inherit properties and behaviors from other classes, promoting code reuse, modularity, and extensibility in object-oriented programming.
+            </p>
+        </details>
+        <details>
+            <summary><strong>Visibility Modifiers in Kotlin</strong></summary>
+            <p>
+                <strong>1. Public:</strong><br>
+                Public visibility is the default in Kotlin. Declarations marked as public are accessible from anywhere within the same module or package, as well as from other modules or packages that depend on the module where the declaration is located.
+                <br><br>
+        
+                <strong>2. Private:</strong><br>
+                Private visibility restricts access to the declaration within the same file where it's declared. Members marked as private are not visible outside of the file, including within the same package or module. This helps in encapsulating implementation details and prevents unintended access.
+                <br><br>
+        
+                <strong>3. Protected:</strong><br>
+                Protected visibility allows access to the declaration from within the class where it's declared and its subclasses. Unlike Java, protected members in Kotlin are not visible in the same package. This modifier is useful for inheritance, enabling subclasses to access protected members of their superclass.
+                <br><br>
+        
+                <strong>4. Internal:</strong><br>
+                Internal visibility restricts access to the declaration within the same module. A module in Kotlin is a set of Kotlin files compiled together. Internal members are visible to other declarations within the same module but inaccessible from outside the module. This promotes encapsulation within larger projects and facilitates modular development.
+                <br><br>
+        
+                Visibility modifiers in Kotlin provide fine-grained control over the accessibility of declarations, helping developers enforce encapsulation and maintain a clear separation of concerns within their codebases. By using these modifiers appropriately, developers can improve code maintainability, readability, and security.
+            </p>
+        </details>
+        <details open>
+            <summary><strong>Android Telephony API</strong></summary>
+            <p>
+              **Overview:**<br>
+              The Android Telephony API provides developers with a set of classes and interfaces to interact with telephony-related functionality on Android devices. It allows developers to access and control various features related to phone calls, SMS messaging, and network connectivity.
+          
+              <br><br>
+          
+              **Main Components:**
+          
+              <ul>
+                <li>
+                  <strong>TelephonyManager:</strong> This class serves as the entry point for accessing telephony services and information about the device's telephony state. Developers can retrieve information such as the device's IMEI, phone number, SIM card status, network operator details, and signal strength.
+                </li>
+                <li>
+                  <strong>PhoneStateListener:</strong> This interface enables developers to listen for changes in telephony-related states, such as incoming calls, call state changes, and signal strength changes. By implementing this interface and registering a PhoneStateListener instance with the TelephonyManager, developers can receive notifications about telephony events in their apps.
+                </li>
+                <li>
+                  <strong>SmsManager:</strong> This class provides methods for sending SMS messages programmatically. Developers can use SmsManager to send both text and binary SMS messages, as well as to manage the message delivery status.
+                </li>
+                <li>
+                  <strong>TelephonyProvider:</strong> This content provider offers access to telephony-related data stored on the device, such as call logs, SMS messages, and voicemail messages. Developers can query and manipulate this data using standard ContentResolver operations.
+                </li>
+              </ul>
+          
+              <br><br>
+          
+              **Capabilities:**
+          
+              <ul>
+                <li>
+                  <strong>Making and Managing Calls:</strong> Developers can use the Telephony API to initiate outgoing calls, receive incoming calls, and manage call states such as answering, rejecting, and ending calls.
+                </li>
+                <li>
+                  <strong>Sending and Receiving SMS:</strong> The API allows developers to send SMS messages programmatically and listen for incoming SMS messages. This enables features such as SMS-based authentication, notifications, and messaging integrations.
+                </li>
+                <li>
+                  <strong>Accessing Telephony Information:</strong> Developers can retrieve detailed information about the device's telephony state, including network operator details, signal strength, SIM card status, and device identifiers like IMEI and phone number.
+                </li>
+                <li>
+                  <strong>Monitoring Telephony Events:</strong> By registering a PhoneStateListener, developers can receive callbacks for various telephony events such as incoming calls, call state changes, and signal strength changes. This enables developers to build apps that respond dynamically to telephony-related events.
+                </li>
+              </ul>
+          
+              <br><br>
+          
+              **Usage Considerations:**
+          
+              When using the Android Telephony API, developers should be mindful of user privacy and data security concerns. Access to sensitive telephony-related information, such as the device's IMEI or phone number, may require explicit user consent or runtime permissions depending on the Android API level and device configuration.
+          
+              <br><br>
+          
+              Overall, the Android Telephony API empowers developers to build feature-rich applications that leverage telephony functionality to provide enhanced communication and connectivity experiences on Android devices.
+            </p>
+          </details>
+          
+        
+        
         
         
                 
